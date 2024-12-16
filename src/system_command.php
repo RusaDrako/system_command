@@ -31,7 +31,7 @@ class system_command{
     public function run($time=30) {
         set_time_limit($time);
         exec($this->command, $this->report, $retval);
-        if($retval){
+        if(!$retval){
             $this->status=system_command::SC_STATUS__OK;
         }else{
             $this->status=system_command::SC_STATUS__ERROR;
